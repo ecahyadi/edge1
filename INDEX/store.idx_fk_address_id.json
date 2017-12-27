@@ -1,0 +1,27 @@
+{
+  "id" : "store.idx_fk_address_id",
+  "name" : "idx_fk_address_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "store",
+        "tableName" : "store",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "store",
+          "columnName" : "address_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

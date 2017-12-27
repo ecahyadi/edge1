@@ -1,0 +1,27 @@
+{
+  "id" : "payment.fk_payment_rental",
+  "name" : "fk_payment_rental",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "payment",
+        "tableName" : "payment",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "rental_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

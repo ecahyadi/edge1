@@ -1,0 +1,27 @@
+{
+  "id" : "payment.idx_fk_staff_id",
+  "name" : "idx_fk_staff_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "payment",
+        "tableName" : "payment",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "staff_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

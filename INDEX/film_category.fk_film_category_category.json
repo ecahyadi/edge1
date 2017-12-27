@@ -1,0 +1,27 @@
+{
+  "id" : "film_category.fk_film_category_category",
+  "name" : "fk_film_category_category",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "film_category",
+        "tableName" : "film_category",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "category_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

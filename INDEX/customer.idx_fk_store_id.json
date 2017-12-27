@@ -1,0 +1,27 @@
+{
+  "id" : "customer.idx_fk_store_id",
+  "name" : "idx_fk_store_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "customer",
+        "tableName" : "customer",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "store_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

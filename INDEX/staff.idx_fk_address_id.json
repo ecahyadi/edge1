@@ -1,0 +1,27 @@
+{
+  "id" : "staff.idx_fk_address_id",
+  "name" : "idx_fk_address_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "staff",
+        "tableName" : "staff",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "staff",
+          "columnName" : "address_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

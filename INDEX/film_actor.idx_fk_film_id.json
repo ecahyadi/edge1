@@ -1,0 +1,27 @@
+{
+  "id" : "film_actor.idx_fk_film_id",
+  "name" : "idx_fk_film_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "film_actor",
+        "tableName" : "film_actor",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "film_actor",
+          "columnName" : "film_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id" : "inventory.idx_store_id_film_id",
+  "name" : "idx_store_id_film_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "inventory",
+        "tableName" : "inventory",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "store_id"
+        },
+        "position" : 1
+      }, {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "film_id"
+        },
+        "position" : 2
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "name" : "inventory",
+  "temporary" : false,
+  "constraints" : [ {
+    "name" : "fk_inventory_film",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "film_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "film",
+          "columnName" : "film_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "PRIMARY",
+    "inline" : false,
+    "type" : {
+      "primaryKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "inventory_id"
+        } ]
+      }
+    }
+  }, {
+    "name" : "fk_inventory_store",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "store_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "store",
+          "columnName" : "store_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "inventory_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "film_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "store_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "inventory",
+          "columnName" : "last_update"
+        } ]
+      }
+    }
+  } ],
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "inventory_id",
+        "properties" : {
+          "autoincrement" : true
+        },
+        "dataType" : {
+          "text" : "mediumint(${0}) ${1}",
+          "name" : "mediumint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "8"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "film_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "store_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "last_update",
+        "defaultValue" : "current_timestamp()",
+        "properties" : {
+          "autoincrement" : false,
+          "onUpdate" : "current_timestamp"
+        },
+        "dataType" : {
+          "text" : "timestamp( ${0})",
+          "name" : "timestamp",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      } ]
+    }
+  },
+  "properties" : {
+    "engine" : "InnoDB",
+    "autoIncrement" : 4582,
+    "collate" : "utf8_general_ci",
+    "rowFormat" : "DEFAULT"
+  }
+}

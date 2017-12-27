@@ -1,0 +1,417 @@
+{
+  "name" : "film",
+  "temporary" : false,
+  "constraints" : [ {
+    "name" : "PRIMARY",
+    "inline" : false,
+    "type" : {
+      "primaryKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "film_id"
+        } ]
+      }
+    }
+  }, {
+    "name" : "fk_film_language",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "language_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "language",
+          "columnName" : "language_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "fk_film_language_original",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "original_language_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "language",
+          "columnName" : "language_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "film_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "title"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "language_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "rental_duration"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "rental_rate"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "replacement_cost"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film",
+          "columnName" : "last_update"
+        } ]
+      }
+    }
+  } ],
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "film_id",
+        "properties" : {
+          "autoincrement" : true
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "title",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "varchar(${0}) CHARACTER SET ${1} COLLATE ${2}",
+          "name" : "varchar",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "255"
+          }, {
+            "position" : 1,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 2,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "description",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "text CHARACTER SET ${0} COLLATE ${1}",
+          "name" : "text",
+          "params" : [ {
+            "position" : 0,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 1,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "release_year",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "year",
+          "name" : "year",
+          "params" : [ ]
+        }
+      }, {
+        "name" : "language_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "original_language_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "rental_duration",
+        "defaultValue" : "3",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "rental_rate",
+        "defaultValue" : "4.99",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "decimal(${0},${1})",
+          "name" : "decimal",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "4"
+          }, {
+            "position" : 1,
+            "name" : "decimals",
+            "value" : "2"
+          } ]
+        }
+      }, {
+        "name" : "length",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "replacement_cost",
+        "defaultValue" : "19.99",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "decimal(${0},${1})",
+          "name" : "decimal",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "decimals",
+            "value" : "2"
+          } ]
+        }
+      }, {
+        "name" : "rating",
+        "defaultValue" : "G",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "enum( ${0},  ${1},  ${2},  ${3},  ${4}) CHARACTER SET ${5} COLLATE ${6}",
+          "name" : "enum",
+          "params" : [ {
+            "position" : 0,
+            "name" : "value",
+            "value" : "G"
+          }, {
+            "position" : 1,
+            "name" : "value",
+            "value" : "PG"
+          }, {
+            "position" : 2,
+            "name" : "value",
+            "value" : "PG-13"
+          }, {
+            "position" : 3,
+            "name" : "value",
+            "value" : "R"
+          }, {
+            "position" : 4,
+            "name" : "value",
+            "value" : "NC-17"
+          }, {
+            "position" : 5,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 6,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "special_features",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "set( ${0},  ${1},  ${2},  ${3}) CHARACTER SET ${4} COLLATE ${5}",
+          "name" : "set",
+          "params" : [ {
+            "position" : 0,
+            "name" : "value",
+            "value" : "Trailers"
+          }, {
+            "position" : 1,
+            "name" : "value",
+            "value" : "Commentaries"
+          }, {
+            "position" : 2,
+            "name" : "value",
+            "value" : "Deleted Scenes"
+          }, {
+            "position" : 3,
+            "name" : "value",
+            "value" : "Behind the Scenes"
+          }, {
+            "position" : 4,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 5,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "last_update",
+        "defaultValue" : "current_timestamp()",
+        "properties" : {
+          "autoincrement" : false,
+          "onUpdate" : "current_timestamp"
+        },
+        "dataType" : {
+          "text" : "timestamp( ${0})",
+          "name" : "timestamp",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      } ]
+    }
+  },
+  "properties" : {
+    "engine" : "InnoDB",
+    "autoIncrement" : 1,
+    "collate" : "utf8_general_ci",
+    "rowFormat" : "DEFAULT"
+  }
+}

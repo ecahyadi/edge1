@@ -1,0 +1,27 @@
+{
+  "id" : "rental.idx_fk_staff_id",
+  "name" : "idx_fk_staff_id",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "rental",
+        "tableName" : "rental",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "rental",
+          "columnName" : "staff_id"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

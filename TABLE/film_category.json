@@ -1,0 +1,160 @@
+{
+  "name" : "film_category",
+  "temporary" : false,
+  "constraints" : [ {
+    "name" : "PRIMARY",
+    "inline" : false,
+    "type" : {
+      "primaryKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "film_id"
+        }, {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "category_id"
+        } ]
+      }
+    }
+  }, {
+    "name" : "fk_film_category_category",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "category_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "category",
+          "columnName" : "category_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "fk_film_category_film",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "film_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "film",
+          "columnName" : "film_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "film_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "category_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "film_category",
+          "columnName" : "last_update"
+        } ]
+      }
+    }
+  } ],
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "film_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "category_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "last_update",
+        "defaultValue" : "current_timestamp()",
+        "properties" : {
+          "autoincrement" : false,
+          "onUpdate" : "current_timestamp"
+        },
+        "dataType" : {
+          "text" : "timestamp( ${0})",
+          "name" : "timestamp",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      } ]
+    }
+  },
+  "properties" : {
+    "engine" : "InnoDB",
+    "collate" : "utf8_general_ci",
+    "rowFormat" : "DEFAULT"
+  }
+}

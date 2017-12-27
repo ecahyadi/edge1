@@ -1,0 +1,325 @@
+{
+  "name" : "customer",
+  "temporary" : false,
+  "constraints" : [ {
+    "name" : "fk_customer_address",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "address_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "address",
+          "columnName" : "address_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "fk_customer_store",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "store_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "store",
+          "columnName" : "store_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "PRIMARY",
+    "inline" : false,
+    "type" : {
+      "primaryKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "customer_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "customer_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "store_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "first_name"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "last_name"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "address_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "active"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "create_date"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "customer",
+          "columnName" : "last_update"
+        } ]
+      }
+    }
+  } ],
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "customer_id",
+        "properties" : {
+          "autoincrement" : true
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "store_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "first_name",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "varchar(${0}) CHARACTER SET ${1} COLLATE ${2}",
+          "name" : "varchar",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "45"
+          }, {
+            "position" : 1,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 2,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "last_name",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "varchar(${0}) CHARACTER SET ${1} COLLATE ${2}",
+          "name" : "varchar",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "45"
+          }, {
+            "position" : 1,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 2,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "email",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "varchar(${0}) CHARACTER SET ${1} COLLATE ${2}",
+          "name" : "varchar",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "50"
+          }, {
+            "position" : 1,
+            "name" : "charset",
+            "value" : "utf8"
+          }, {
+            "position" : 2,
+            "name" : "collation",
+            "value" : "utf8_general_ci"
+          } ]
+        }
+      }, {
+        "name" : "address_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "active",
+        "defaultValue" : "1",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0})",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "1"
+          } ]
+        }
+      }, {
+        "name" : "create_date",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "datetime( ${0})",
+          "name" : "datetime",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      }, {
+        "name" : "last_update",
+        "defaultValue" : "current_timestamp()",
+        "properties" : {
+          "autoincrement" : false,
+          "onUpdate" : "current_timestamp"
+        },
+        "dataType" : {
+          "text" : "timestamp( ${0})",
+          "name" : "timestamp",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      } ]
+    }
+  },
+  "properties" : {
+    "engine" : "InnoDB",
+    "autoIncrement" : 600,
+    "collate" : "utf8_general_ci",
+    "rowFormat" : "DEFAULT"
+  }
+}

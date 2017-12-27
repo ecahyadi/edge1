@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "container" : "sakilam",
+    "origin" : "database",
+    "version" : 1.0,
+    "connectorUUID" : "abf57f58-e888-4780-b8b7-d81d732c4dda",
+    "creationDate" : "2017-12-27T00:30:43+08",
+    "user" : "root"
+  },
+  "dbPlatform" : {
+    "name" : "MARIADB",
+    "version" : "10.2.0"
+  },
+  "tables" : [ ],
+  "indexes" : [ ],
+  "triggers" : [ ],
+  "functions" : [ ],
+  "procedures" : [ ],
+  "views" : [ ],
+  "events" : [ ]
+}

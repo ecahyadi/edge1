@@ -1,0 +1,276 @@
+{
+  "name" : "payment",
+  "temporary" : false,
+  "constraints" : [ {
+    "name" : "fk_payment_staff",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "staff_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "staff",
+          "columnName" : "staff_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "fk_payment_customer",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "customer_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "customer",
+          "columnName" : "customer_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "RESTRICT",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "name" : "PRIMARY",
+    "inline" : false,
+    "type" : {
+      "primaryKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "payment_id"
+        } ]
+      }
+    }
+  }, {
+    "name" : "fk_payment_rental",
+    "inline" : false,
+    "type" : {
+      "foreignKey" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "rental_id"
+        } ],
+        "refColumns" : [ {
+          "container" : "",
+          "tableName" : "rental",
+          "columnName" : "rental_id"
+        } ],
+        "properties" : {
+          "matchRule" : "NONE",
+          "onDelete" : "SET NULL",
+          "onUpdate" : "CASCADE"
+        }
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "payment_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "customer_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "staff_id"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "amount"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "payment_date"
+        } ]
+      }
+    }
+  }, {
+    "inline" : true,
+    "type" : {
+      "notNull" : {
+        "columns" : [ {
+          "container" : "sakilam",
+          "tableName" : "payment",
+          "columnName" : "last_update"
+        } ]
+      }
+    }
+  } ],
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "payment_id",
+        "properties" : {
+          "autoincrement" : true
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "customer_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "smallint(${0}) ${1}",
+          "name" : "smallint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "staff_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "tinyint(${0}) ${1}",
+          "name" : "tinyint",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "3"
+          }, {
+            "position" : 1,
+            "name" : "signed",
+            "value" : "UNSIGNED"
+          } ]
+        }
+      }, {
+        "name" : "rental_id",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "int(${0})",
+          "name" : "int",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "11"
+          } ]
+        }
+      }, {
+        "name" : "amount",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "decimal(${0},${1})",
+          "name" : "decimal",
+          "params" : [ {
+            "position" : 0,
+            "name" : "length",
+            "value" : "5"
+          }, {
+            "position" : 1,
+            "name" : "decimals",
+            "value" : "2"
+          } ]
+        }
+      }, {
+        "name" : "payment_date",
+        "properties" : {
+          "autoincrement" : false
+        },
+        "dataType" : {
+          "text" : "datetime( ${0})",
+          "name" : "datetime",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      }, {
+        "name" : "last_update",
+        "defaultValue" : "current_timestamp()",
+        "properties" : {
+          "autoincrement" : false,
+          "onUpdate" : "current_timestamp"
+        },
+        "dataType" : {
+          "text" : "timestamp( ${0})",
+          "name" : "timestamp",
+          "params" : [ {
+            "position" : 0,
+            "name" : "fsp",
+            "value" : "0"
+          } ]
+        }
+      } ]
+    }
+  },
+  "properties" : {
+    "engine" : "InnoDB",
+    "autoIncrement" : 16050,
+    "collate" : "utf8_general_ci",
+    "rowFormat" : "DEFAULT"
+  }
+}

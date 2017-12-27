@@ -1,0 +1,27 @@
+{
+  "id" : "actor.idx_actor_last_name",
+  "name" : "idx_actor_last_name",
+  "method" : "BTREE",
+  "unique" : false,
+  "type" : {
+    "table" : {
+      "ref" : {
+        "id" : "actor",
+        "tableName" : "actor",
+        "containerName" : "sakilam"
+      },
+      "columns" : [ {
+        "ref" : {
+          "container" : "sakilam",
+          "tableName" : "actor",
+          "columnName" : "last_name"
+        },
+        "position" : 1
+      } ]
+    }
+  },
+  "properties" : {
+    "keyBlockSize" : 0,
+    "comment" : ""
+  }
+}

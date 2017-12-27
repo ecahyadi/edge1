@@ -1,0 +1,18 @@
+{
+  "id" : "sales_by_film_category",
+  "name" : "sales_by_film_category",
+  "query" : "select `c`.`name` AS `category`,sum(`p`.`amount`) AS `total_sales` from (((((`payment` `p` join `rental` `r` on(`p`.`rental_id` = `r`.`rental_id`)) join `inventory` `i` on(`r`.`inventory_id` = `i`.`inventory_id`)) join `film` `f` on(`i`.`film_id` = `f`.`film_id`)) join `film_category` `fc` on(`f`.`film_id` = `fc`.`film_id`)) join `category` `c` on(`fc`.`category_id` = `c`.`category_id`)) group by `c`.`name` order by sum(`p`.`amount`) desc",
+  "type" : {
+    "relational" : {
+      "columns" : [ {
+        "name" : "category"
+      }, {
+        "name" : "total_sales"
+      } ]
+    }
+  },
+  "properties" : {
+    "definer" : "`root`@`localhost`",
+    "sqlSecurity" : "DEFINER"
+  }
+}
